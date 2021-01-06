@@ -79,6 +79,7 @@ class MainActivity : AppCompatActivity() {
 
                     tvequalbutton.text=removezeroafterdot((one.toDouble()+two.toDouble()).toString())
 
+
                 }else if(tvvalue.contains("*")){
                     val splitvalue=tvvalue.split("*")
 
@@ -119,20 +120,20 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun removezeroafterdot(result : String):String{
-        var value=result
-        if(result.contains("."))
-        {
-            while(result.endsWith("0") && result.contains("."))
+    fun removezeroafterdot(result : String):String{
+
+            var value=result
+
+            while(value.endsWith("0") && value.contains("."))
             {
-                value=result.substring(0,result.length-1)
-            }
-            if(value.endsWith("."))
-            {
-                value=result.substring(0,result.length-1)
+                value=value.substring(0,value.length-1)
             }
 
-        }
+            if(value.endsWith("."))
+            {
+                value=value.substring(0,value.length-1)
+            }
+
         return value
     }
 
